@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter } from "@fortawesome/free-brands-svg-icons"
 import "../App.css"
+import { faQuoteLeftAlt, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 
 class Quote extends Component {
     constructor(props){
@@ -49,9 +52,9 @@ class Quote extends Component {
                     <h1 className="title">Quote Machine</h1>  
                     <h4 className = "quote" id="text">{this.state.quote}</h4>
                 <p id="author"><em>--{this.state.author}</em></p>
-              <button onClick={this.tweetQuote} className="tweet-quote"><a id="tweet-quote" href={`https://twitter.com/intent/tweet?text=${this.state.quote}  -${this.state.author}`} target="_blank">Twitter</a></button>
+              <button onClick={this.tweetQuote} className="tweet-quote"><a id="tweet-quote" href={`https://twitter.com/intent/tweet?text=${this.state.quote}  -${this.state.author}`} target="_blank"><FontAwesomeIcon icon={faTwitter} /></a></button>
     
-              <button id="new-quote" onClick={this.getNewQuote}>New Quote</button>
+              <button id="new-quote" onClick={this.getNewQuote}><FontAwesomeIcon icon={faQuoteLeftAlt} />New Quote<FontAwesomeIcon icon={faQuoteRight} /></button>
               </div>
           : <div> loading...</div>}
             </div>
